@@ -1,0 +1,318 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+:root {
+  --white: #ffffff
+}
+
+body {
+  background: rgb(31, 55, 86);
+  background: radial-gradient(circle, rgba(31, 55, 86, 1) 0%, rgba(20, 21, 57, 1) 100%);
+  color: var(--white);
+}
+
+.container {
+  width: 600px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+header {
+  border: 3px solid hsl(217, 16%, 45%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 50px 0;
+}
+
+.score-container {
+  background: var(--white);
+  padding: 15px 40px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+h4 {
+  color: hsl(229, 64%, 46%);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 14px;
+}
+
+#score {
+  color: hsl(229, 25%, 31%);
+  margin: 0;
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+main {
+  width: 400px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  position: relative;
+}
+
+main::before {
+  content: '';
+  background: url(./images/bg-triangle.svg) no-repeat;
+  width: 70%;
+  height: 70%;
+  position: absolute;
+  top: 20%;
+  left: 15%;
+  z-index: -10;
+  background-size: cover;
+}
+
+.btn-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: none;
+  box-shadow: inset 0 -7px rgba(0, 0, 0, 0.4);
+  margin: 0 25px;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-circle:active {
+  transform: scale(0.9);
+}
+
+.btn-paper {
+  background: linear-gradient(to bottom, hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+}
+
+.btn-scissors {
+  background: linear-gradient(to bottom, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+}
+
+.btn-rock {
+  background: linear-gradient(to bottom, hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+}
+
+.btn-circle .wrapper {
+  width: 120px;
+  height: 120px;
+  background: var(--white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: inset 0 7px rgba(0, 0, 0, 0.25);
+}
+
+.btn-rules {
+  border: 2px solid var(--white);
+  border-radius: 10px;
+  background: transparent;
+  text-transform: uppercase;
+  color: var(--white);
+  padding: 10px 30px;
+  font-size: 16px;
+  letter-spacing: 2px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  cursor: pointer;
+  transition: 300ms opacity ease;
+  opacity: 0.5;
+}
+
+.btn-rules:hover {
+  opacity: 1;
+}
+
+.btn {
+  border: 2px solid var(--white);
+  border-radius: 10px;
+  background: var(--white);
+  text-transform: uppercase;
+  color: hsl(229, 25%, 31%);
+  padding: 10px 25px;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.selection {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 1000px;
+  max-width: 100%;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.selection.game {
+  animation: game_animation 400ms ease-in-out infinite;
+}
+
+@keyframes game_animation {
+  0%,
+  100% {
+    transform: translateY(-20px);
+  }
+
+  50% {
+    transform: translateY(0px);
+  }
+}
+
+#computer_select {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.selection button {
+  cursor: pointer;
+}
+
+.selection .btn-circle {
+  margin: 50px 100px;
+  transform: scale(1.4);
+  cursor: default;
+}
+
+.big-text {
+  margin: 0 0 20px;
+  text-transform: uppercase;
+  line-height: 0.8;
+  font-size: 3rem;
+}
+
+.shadow {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.4);
+  margin-top: 50px;
+}
+
+div.btn-circle {
+  z-index: 10;
+}
+
+.modal-container {
+  background: rgba(0, 0, 0, 0.67);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 100;
+}
+
+.modal {
+  background: var(--white);
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.modal div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal h4 {
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.modal-container button {
+  background: transparent;
+  border: transparent;
+  outline: none;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  body {
+    position: relative;
+  }
+
+  header {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .container {
+    max-width: 95vw;
+  }
+
+  .selection .btn-circle {
+    margin: 50px 20px;
+    transform: scale(1);
+  }
+
+  .btn-rules {
+    position: absolute;
+    bottom: -80px;
+    right: calc(50vw - 55px);
+  }
+
+  .selection {
+    width: 500px;
+  }
+
+  .selection>div:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .go-down {
+    order: 1;
+  }
+}
+
+@media (max-width: 415px) {
+  main {
+    width: 300px;
+  }
+
+  main::before {
+    background-position: center;
+  }
+
+  .btn-circle {
+    transform: scale(0.8);
+    margin: 0px;
+  }
+}
+
+@media (max-width:340px) {
+  header {
+    gap: 20px;
+    justify-content: center;
+  }
+}

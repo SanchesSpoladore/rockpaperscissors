@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock, Paper, Scissors game</title>
+  <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <img src="./images/logo.svg" alt="Logo rock, paper and scissors">
+
+      <div class="score-container">
+        <h4>Score</h4>
+        <p id="score">0</p>
+      </div>
+    </header>
+
+    <main id="main">
+      <button class="btn-circle btn-paper pick" id="paper">
+        <span class="wrapper">
+          <img src="./images/icon-paper.svg" alt="Paper">
+        </span>
+      </button>
+
+      <button class="btn-circle btn-scissors pick" id="scissors">
+        <span class="wrapper">
+          <img src="./images/icon-scissors.svg" alt="Scissors">
+        </span>
+      </button>
+
+      <button class="btn-circle btn-rock pick" id="rock">
+        <span class="wrapper">
+          <img src="./images/icon-rock.svg" alt="Rock">
+        </span>
+      </button>
+    </main>
+
+    <button class="btn-rules" id="open">Rules</button>
+    <div class="modal-container" id="modal">
+      <div class="modal">
+        <div>
+          <h4>Rules</h4>
+
+          <button id="close">
+            <img src="./images/icon-close.svg" alt="Close">
+          </button>
+        </div>
+
+        <img src="./images/image-rules.svg" alt="Rules">
+      </div>
+    </div>
+  </div>
+
+  <div class="selection game" id="selection">
+    <div>
+      <h2>You picked</h2>
+      <div id="user_select">
+      </div>
+    </div>
+
+    <div class="go-down">
+      <p class="big-text">You <span id="winner"></span></p>
+      <button class="btn" id="reset">Play again</button>
+    </div>
+
+    <div>
+      <h2>The house picked</h2>
+      <div id="computer_select">
+        <div class="shadow"></div>
+      </div>
+    </div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+
+</html>
